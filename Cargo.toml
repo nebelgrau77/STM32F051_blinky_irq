@@ -1,0 +1,22 @@
+[package]
+name = "blinky_irq"
+version = "0.1.0"
+authors = ["nebelgrau <nebelgrau@gmx.com>"]
+edition = "2018"
+
+[dependencies]
+bare-metal = { version = "0.2", features = ["const-fn"] }
+cortex-m = "0.6"
+cortex-m-rt = "0.6"
+embedded-hal = { version = "0.2", features = ["unproven"] }
+stm32f0 = "0.9"
+nb = "0.1"
+void = { version = "1.0", default-features = false }
+stm32f0xx-hal = {version = "0.15.2", features = ["stm32f051", "rt"]}
+panic-halt = "0.2"
+
+[profile.release]
+lto = true
+debug = true
+opt-level = "z"
+
